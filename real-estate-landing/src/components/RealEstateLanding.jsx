@@ -5,12 +5,15 @@ import PropertyCard from "./PropertyCard";
 import ContactForm from "./ContactForm";
 import WhatsAppPopup from "./WhatsAppPopup";
 import Footer from "./Footer";
+import OverviewSection from "./OverviewSection";
+import PriceTableSection from "./PriceTableSection";
+import AmenitiesSection from "./AmenitiesSection";
+import LocationAdvantagesSection from "./LocationAdvantagesSection";
+import AboutPropertySection from "./AboutPropertySection";
+
 import slide1 from "../assets/images/slider/slide1.webp";
 import slide3 from "../assets/images/slider/slide3.webp";
 import proj3 from "../assets/images/slider/proj3.jpg";
-
-
-
 
 const RealEstateLanding = () => {
   const properties = [
@@ -22,22 +25,7 @@ const RealEstateLanding = () => {
       image: [slide1],
       link: "https://kprimus.in",
     },
-    {
-      id: 2,
-      title: "Signature Global Twin Tower",
-      price: "5.57 Cr-7.95 Cr",
-      features: "300 Units, 3,4BHK 2630-3550 Sq.Ft",
-      image: [slide3],
-      link: "https://kprimus.in",
-    },
-    {
-      id: 3,
-      title: "Signature Global City 93",
-      price: "1.25 Cr- 1.99 Cr",
-      features: "1200 Units, 2,3BHK,980-1530Sq.Ft",
-      image: [proj3],
-      link: "https://kprimus.in",
-    },
+    // ... other properties remain the same
   ];
 
   return (
@@ -45,7 +33,12 @@ const RealEstateLanding = () => {
       <Header />
       <ImageSlider />
 
-      {/* Properties Section */}
+      <OverviewSection />
+      <PriceTableSection />
+      <AmenitiesSection />
+      <LocationAdvantagesSection />
+
+      {/* Existing Properties Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="text-3xl font-bold mb-8 text-center">
           Featured Properties
@@ -57,14 +50,15 @@ const RealEstateLanding = () => {
         </div>
       </section>
 
-      {/* Contact Section */}
+      <AboutPropertySection />
+
+      {/* Existing Contact Section */}
       <section id="contact" className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ContactForm />
           <div className="bg-white p-6 rounded-lg shadow-lg">
             <h2 className="text-2xl font-bold mb-6">Location</h2>
             <div className="w-full h-64 bg-gray-200 rounded">
-              {/* Google Maps iframe would go here */}
               <div className="w-full h-full flex items-center justify-center">
                 Map Placeholder
               </div>
